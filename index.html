@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikkel E. Frost | Digital Marketingspecialist & E-commerce Iværksætter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background-color: #f3f4f6;
+        }
+
+        .case-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .case-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-xl tracking-tight">Mikkel E. <span class="text-blue-600">Frost</span></span>
+            <div class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="#erfaring" class="hover:text-blue-600 transition">Erfaring</a>
+                <a href="#resultater" class="hover:text-blue-600 transition">Resultater</a>
+                <a href="#kompetencer" class="hover:text-blue-600 transition">Kompetencer</a>
+                <a href="#uddannelse" class="hover:text-blue-600 transition">Uddannelse</a>
+            </div>
+            <a href="mailto:mikkelemilfrost@gmail.com" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">Kontakt mig</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-16 md:py-24 px-6">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-12 items-center">
+            <div class="md:col-span-2">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
+                    Digital <span class="gradient-text">Marketing Specialist</span> & E-commerce Founder
+                </h1>
+                <p class="text-xl text-slate-600 mb-8 max-w-2xl">
+                    Ekspert i performance marketing med fokus på datadrevet vækst, CRO og profitabel skalering. Fra 0 til 7-cifret omsætning.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 text-sm font-medium">
+                    <div class="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-lg">
+                        <i class="fa-solid fa-location-dot text-blue-600"></i>
+                        <span>Vanløse, Danmark</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-lg">
+                        <i class="fa-solid fa-phone text-blue-600"></i>
+                        <span>+45 41 82 67 99</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-lg">
+                        <i class="fa-solid fa-envelope text-blue-600"></i>
+                        <span>mikkelemilfrost@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl rotate-3">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" alt="[Billede af Mikkel E. Frost]" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-100 rounded-full -z-10 blur-xl"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- High Impact Stats / Case Results -->
+    <section id="resultater" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 text-center">Udvalgte Resultater</h2>
+            <p class="text-center text-slate-500 mb-12">Klik på kortene for at se de fulde detaljer</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Case 1: AYAVA -->
+                <div class="case-card bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col justify-between" onclick="openModal('modal-ayava')">
+                    <div>
+                        <div class="text-blue-600 mb-4"><i class="fa-solid fa-chart-line text-3xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">AYAVA</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-2">Skalering fra 190.000 kr. til 1 mio. kr. i månedlig omsætning på rekordtid.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-blue-600">+426% <span class="text-sm font-normal text-slate-400">Vækst</span></div>
+                        <div class="text-xs mt-4 text-blue-600 font-bold flex items-center gap-1 uppercase tracking-wider">Læs mere <i class="fa-solid fa-arrow-right text-[10px]"></i></div>
+                    </div>
+                </div>
+
+                <!-- Case 2: MUSEN & SLOTTET -->
+                <div class="case-card bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col justify-between" onclick="openModal('modal-musen')">
+                    <div>
+                        <div class="text-purple-600 mb-4"><i class="fa-solid fa-arrow-up-right-dots text-3xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">MUSEN & SLOTTET</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-2">Markant øgning af webshoppens andel i den samlede forretning.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-purple-600">495% <span class="text-sm font-normal text-slate-400">Vækst</span></div>
+                        <div class="text-xs mt-4 text-purple-600 font-bold flex items-center gap-1 uppercase tracking-wider">Læs mere <i class="fa-solid fa-arrow-right text-[10px]"></i></div>
+                    </div>
+                </div>
+
+                <!-- Case 3: BY MINELLA -->
+                <div class="case-card bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col justify-between" onclick="openModal('modal-minella')">
+                    <div>
+                        <div class="text-emerald-600 mb-4"><i class="fa-solid fa-bolt text-3xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">BY MINELLA</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-2">Gennemgribende CRO optimering der transformerede bundlinjen.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-emerald-600">2% → 5.5% <span class="text-sm font-normal text-slate-400">Konv. rate</span></div>
+                        <div class="text-xs mt-4 text-emerald-600 font-bold flex items-center gap-1 uppercase tracking-wider">Læs mere <i class="fa-solid fa-arrow-right text-[10px]"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- AYAVA Modal -->
+    <div id="modal-ayava" class="modal items-center justify-center p-6 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal('modal-ayava')">
+        <div class="modal-content bg-white w-full max-w-xl rounded-3xl p-8 md:p-12 relative shadow-2xl" onclick="event.stopPropagation()">
+            <button class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition" onclick="closeModal('modal-ayava')">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="text-blue-600 mb-6"><i class="fa-solid fa-chart-line text-4xl"></i></div>
+            <h2 class="text-3xl font-bold mb-2">AYAVA</h2>
+            <p class="text-blue-600 font-semibold mb-6 uppercase tracking-wider text-sm">Case: Datadrevet Skalering</p>
+            <div class="space-y-4 text-slate-600">
+                <p class="text-lg leading-relaxed">
+                    Jeg skalerede den månedlige omsætning fra <span class="font-bold text-slate-900">190.000 kr. til 1.000.000 kr.</span> på under to måneder.
+                </p>
+                <p>
+                    Dette resultat blev opnået gennem en fokuseret indsats på datadrevet SoMe- og PPC-annoncering, hvor kampagner blev optimeret baseret på realtidsperformance og præcis segmentering af målgrupper.
+                </p>
+                <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 mt-6">
+                    <p class="text-blue-800 font-semibold text-sm">Nøgleresultat:</p>
+                    <p class="text-blue-600 text-2xl font-bold">+426% Omsætningsvækst</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Musen & Slottet Modal -->
+    <div id="modal-musen" class="modal items-center justify-center p-6 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal('modal-musen')">
+        <div class="modal-content bg-white w-full max-w-xl rounded-3xl p-8 md:p-12 relative shadow-2xl" onclick="event.stopPropagation()">
+            <button class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition" onclick="closeModal('modal-musen')">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="text-purple-600 mb-6"><i class="fa-solid fa-arrow-up-right-dots text-4xl"></i></div>
+            <h2 class="text-3xl font-bold mb-2">Musen & Slottet</h2>
+            <p class="text-purple-600 font-semibold mb-6 uppercase tracking-wider text-sm">Case: Omnichannel Optimering</p>
+            <div class="space-y-4 text-slate-600">
+                <ul class="space-y-4">
+                    <li class="flex gap-3">
+                        <i class="fa-solid fa-check text-purple-500 mt-1"></i>
+                        <span>Skalerede webshoppens omsætning med <span class="font-bold text-slate-900">495%</span> (fra 166.000 kr. til 1 mio. kr.).</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i class="fa-solid fa-check text-purple-500 mt-1"></i>
+                        <span>Øgede den fysiske butiks omsætning med <span class="font-bold text-slate-900">32%</span> gennem lokal annoncering og synergi.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i class="fa-solid fa-check text-purple-500 mt-1"></i>
+                        <span>Flyttede webshoppens andel af den samlede forretning fra <span class="font-bold text-slate-900">6% til 25%</span> på kun 6 måneder.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- By Minella Modal -->
+    <div id="modal-minella" class="modal items-center justify-center p-6 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal('modal-minella')">
+        <div class="modal-content bg-white w-full max-w-xl rounded-3xl p-8 md:p-12 relative shadow-2xl" onclick="event.stopPropagation()">
+            <button class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition" onclick="closeModal('modal-minella')">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="text-emerald-600 mb-6"><i class="fa-solid fa-bolt text-4xl"></i></div>
+            <h2 class="text-3xl font-bold mb-2">By Minella</h2>
+            <p class="text-emerald-600 font-semibold mb-6 uppercase tracking-wider text-sm">Case: CRO & Holistisk Marketing</p>
+            <div class="space-y-4 text-slate-600">
+                <p class="text-lg leading-relaxed">
+                    Udført en komplet <span class="font-bold text-slate-900">CRO (Conversion Rate Optimization)</span> af hele hjemmesiden.
+                </p>
+                <div class="grid grid-cols-2 gap-4 my-6">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="text-xs text-slate-400 uppercase font-bold">Før</p>
+                        <p class="text-xl font-bold text-slate-400">2% Konv.</p>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                        <p class="text-xs text-emerald-700 uppercase font-bold">Efter</p>
+                        <p class="text-xl font-bold text-emerald-600">5.5% Konv.</p>
+                    </div>
+                </div>
+                <p>
+                    Udover den tekniske optimering af webshoppen, varetog jeg det fulde ansvar for SEO, SoMe & PPC kampagner, hvilket sikrede en rød tråd i hele kunderejsen.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience -->
+    <section id="erfaring" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+                <span class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-briefcase"></i>
+                </span>
+                Erhvervserfaring
+            </h2>
+
+            <div class="space-y-16">
+                <!-- Adentify -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
+                    <div class="mb-2 flex flex-wrap justify-between items-baseline gap-2">
+                        <h3 class="text-2xl font-bold">Marketingspecialist</h3>
+                        <span class="text-sm font-bold bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-nowrap">Maj 2025 – Nu</span>
+                    </div>
+                    <p class="text-lg font-semibold text-slate-700 mb-4">Adentify ApS, Brøndby</p>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-blue-500 mt-1"></i> Fuldt ansvar for performance marketing på tværs af Paid SoMe, PPC, SEO og CRO.</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-blue-500 mt-1"></i> Strategisk eksekvering og skalering af rentable kampagner med budgetansvar på 500.000 kr./md.</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-blue-500 mt-1"></i> Datadrevet segmentering og løbende A/B-testning for at maksimere ROAS/POAS.</li>
+                    </ul>
+                </div>
+
+                <!-- Nuttet Baby -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-300 rounded-full"></div>
+                    <div class="mb-2 flex flex-wrap justify-between items-baseline gap-2">
+                        <h3 class="text-2xl font-bold">Grundlægger & Head of E-commerce</h3>
+                        <span class="text-sm font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-nowrap">Dec 2022 – Dec 2025</span>
+                    </div>
+                    <p class="text-lg font-semibold text-slate-700 mb-4">Nuttet Baby (Eget Projekt)</p>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                        <p class="text-slate-600 italic">"Totalansvar fra 0 til 7-cifret vækst: Etableret og opbygget webshoppen fra bunden som et 'one-man-army' projekt."</p>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex gap-3"><i class="fa-solid fa-circle-dot text-slate-400 mt-2 text-[8px]"></i> <strong>End-to-end drift:</strong> Håndtering af hele værdikæden inkl. sourcing fra leverandører og logistik.</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-circle-dot text-slate-400 mt-2 text-[8px]"></i> <strong>Bundlinjefokus:</strong> Skalering til over 500.000 kr./mdr. med fokus på reel profitabilitet (POAS) fremfor toplinje.</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-circle-dot text-slate-400 mt-2 text-[8px]"></i> <strong>Holistisk forståelse:</strong> Dybt indblik i hvordan fragt, retur og indkøb påvirker marketingbudgettet.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Online Marketing Nu -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-300 rounded-full"></div>
+                    <div class="mb-2 flex flex-wrap justify-between items-baseline gap-2">
+                        <h3 class="text-2xl font-bold">Selvstændig Marketing Konsulent</h3>
+                        <span class="text-sm font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-nowrap">Sep 2019 – Maj 2025</span>
+                    </div>
+                    <p class="text-lg font-semibold text-slate-700 mb-2">Online Marketing Nu, Hvidovre</p>
+                    <p class="text-slate-600">Konsulentbistand for adskillige webshops med fokus på vækststrategi og teknisk opsætning af tracking og annoncering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Grid -->
+    <section id="kompetencer" class="py-20 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Tekniske Kompetencer</h2>
+                <p class="text-slate-400">Et komplet toolkit til moderne performance marketing og e-commerce management.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Advertising -->
+                <div class="space-y-4">
+                    <h4 class="text-blue-400 font-bold uppercase tracking-wider text-xs">Paid Ads</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Meta Ads</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Google Ads</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">TikTok Ads</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Pinterest Ads</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">LinkedIn Ads</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Amazon Ads</span>
+                    </div>
+                </div>
+                <!-- Analytics -->
+                <div class="space-y-4">
+                    <h4 class="text-purple-400 font-bold uppercase tracking-wider text-xs">Data & Analytics</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">GA4</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">GTM</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Reaktion</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">GSC</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Hotjar</span>
+                    </div>
+                </div>
+                <!-- Tech & Shop -->
+                <div class="space-y-4">
+                    <h4 class="text-emerald-400 font-bold uppercase tracking-wider text-xs">E-com & Tech</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Shopify</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">WooCommerce</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Zapier/Make</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">SEO</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Ahrefs/SemRush</span>
+                    </div>
+                </div>
+                <!-- AI & Content -->
+                <div class="space-y-4">
+                    <h4 class="text-orange-400 font-bold uppercase tracking-wider text-xs">AI & Content</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">ChatGPT/Claude</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">MidJourney</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Softr/Loveable</span>
+                        <span class="skill-tag bg-white/10 px-3 py-1 rounded text-sm">Canva</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Footer -->
+    <section id="uddannelse" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-10 shadow-sm border border-slate-200">
+                <h2 class="text-3xl font-bold mb-8">Uddannelse</h2>
+                <div class="flex flex-col md:flex-row gap-6 justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">Markedsføringsøkonom (AP)</h3>
+                        <p class="text-slate-600">CPH Business Academy</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="block font-bold">2021 – 2023</span>
+                        <span class="inline-block mt-2 bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-bold text-sm">Karakter 12 i afsluttende projekt</span>
+                    </div>
+                </div>
+                <p class="mt-4 text-slate-500 text-sm italic">Første år i Roskilde, sidste år i København.</p>
+            </div>
+
+            <div class="mt-24 text-center">
+                <h2 class="text-2xl font-bold mb-4">Lad os skabe resultater sammen</h2>
+                <p class="text-slate-600 mb-8">Jeg er altid åben for nye spændende udfordringer og projekter.</p>
+                <div class="flex justify-center gap-6">
+                    <a href="mailto:mikkelemilfrost@gmail.com" class="text-slate-400 hover:text-blue-600 transition text-2xl"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://linkedin.com" class="text-slate-400 hover:text-blue-600 transition text-2xl"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <p class="mt-12 text-slate-400 text-xs uppercase tracking-widest">Mikkel E. Frost &copy; 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop scroll
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Tillad scroll
+        }
+
+        // Luk modal ved tryk på Esc-tasten
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) closeModal(activeModal.id);
+            }
+        });
+    </script>
+
+</body>
+</html>
